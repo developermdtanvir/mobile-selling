@@ -1,0 +1,104 @@
+[{
+    "img":"https://i.ibb.co/KLzWXrp/download.jpg",
+    "name": "Iphone 11",
+    "orginalprice": "80000",
+    "useofyear": 5,
+    "postime": "Thu 2022",
+    "verified":true,
+    "resale": "155.164.108.69",
+    "price":20000,
+    "category":"iphone"
+  }, {
+    "img": "https://i.ibb.co/KbZpZsc/download.jpg",
+    "name": "Iphone 12",
+    "orginalprice": "100000",
+    "useofyear": 6,
+    "postime": "Thu 2022",
+    "verified": true,
+    "resale": "",
+    "price":50000,
+    "category":"iphone"
+  }, {
+    "img": "https://i.ibb.co/wRrg6B1/download.jpg",
+    "name": "Iphone 13",
+    "orginalprice": 120000,
+    "useofyear": 3,
+    "postime": "Thu 2022",
+    "verified": true,
+    "resale": "",
+    "price":80000,
+    "category":"iphone"
+  }, {
+    "img": "https://i.ibb.co/1vNrCXP/images.jpg",
+    "name": "Oppo A15",
+    "orginalprice": 15000,
+    "useofyear": 2,
+    "postime": "Thu 2022",
+    "verified": true,
+    "resale": "",
+    "price":8000,
+    "category":"oppo"
+  }, {
+    "img":"https://i.ibb.co/stzwgY1/download.jpg",
+    "name": "Oppo Reno",
+    "orginalprice": 27000,
+    "useofyear": 3,
+    "postime": "Thu 2022",
+    "verified": true,
+    "resale": "",
+    "price":10000,
+    "category":"oppo"
+  }, {
+    "img": "https://i.ibb.co/VvfYJCb/images.jpg",
+    "name": "Oppo F23",
+    "orginalprice": 80000,
+    "useofyear": 4,
+    "postime": "Thu 2022",
+    "verified": true,
+    "resale": "",
+    "price":20000,
+    "category":"oppo"
+  }, {
+    "img": 7,
+    "name": "Katerine",
+    "orginalprice": "Lygo",
+    "useofyear": "klygo6@reddit.com",
+    "postime": "Thu 2022",
+    "verified": "206.94.63.80",
+    "resale": "207.39.55.128",
+    "price":20000,
+    "category":"samsung"
+  }, {
+    "img": "https://i.ibb.co/SRbGNc8/download.jpg",
+    "name": "Samsung A51",
+    "orginalprice": 23000,
+    "useofyear": 4,
+    "postime": "Thu 2022",
+    "verified": true,
+    "resale": "",
+    "price":20000,
+    "category":"samsung"
+  }
+  , {
+    "img": "https://i.ibb.co/2cwkqY4/download.jpg",
+    "name": "Samsung A13",
+    "orginalprice": 30000,
+    "useofyear":2,
+    "postime": "Thu 2022",
+    "verified": true,
+    "resale": "",
+    "price":15000,
+    "category":"samsung"
+  },
+   {
+    "img": "https://i.ibb.co/dL5BYj1/download.jpg",
+    "name": "Samsung S20",
+    "orginalprice": 70000,
+    "useofyear":2,
+    "postime": "Thu 2022",
+    "verified": true,
+    "resale": "",
+    "price":30000,
+    "category":"samsung"
+  }
+]

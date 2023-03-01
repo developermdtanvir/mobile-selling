@@ -1,10 +1,12 @@
 import React from 'react';
+import 'react-day-picker/dist/style.css';
 import ReactDOM from 'react-dom/client';
 import { QueryClient, QueryClientProvider } from 'react-query';
 import App from './App';
 import { AuthProvider } from './Contexts/AuthProvider/AuthProvider';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 const queryClient = new QueryClient()

@@ -3,11 +3,11 @@ import React from "react";
 export default function Review() {
   const handleReviewSubmit = (e) => {
     e.preventDefault();
-    console.log(e.target.value);
+    console.log(e.target.message.value);
   };
   return (
-    <div className=" m-2">
-      <figure class="max-w-screen-md">
+    <div className=" m-2 space-y-20">
+      <figure class="max-w-screen-md mx-auto">
         <div class="flex items-center mb-4 text-yellow-300">
           <svg
             aria-hidden="true"
@@ -78,7 +78,7 @@ export default function Review() {
         </figcaption>
       </figure>
       <div className=" w-1/2 mx-auto">
-        <form onSubmit={handleReviewSubmit}>
+        <form onSubmit={handleReviewSubmit} className="space-y-5">
           <label
             for="message"
             class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
@@ -86,6 +86,7 @@ export default function Review() {
             Your message
           </label>
           <textarea
+            name="message"
             id="message"
             rows="4"
             class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"

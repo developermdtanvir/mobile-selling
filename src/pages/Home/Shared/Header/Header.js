@@ -4,16 +4,16 @@ import { menu } from "./menu";
 export default function Header() {
   return (
     <>
-      <nav class=" bg-gradient-to-bl from-gray-700 via-gray-800 to-gray-900 border-gray-200 px-2 sm:px-4 py-2.5 rounded dark:bg-gray-900 my-2">
+      <nav class="sticky top-0 z-20 backdrop-filter backdrop-blur-lg bg-white bg-opacity-30 border-gray-200 px-2 sm:px-4 py-2.5 rounded dark:bg-gray-900 my-2 ">
         <div class="container flex flex-wrap items-center justify-between mx-auto">
-          <a href="https://flowbite.com/" class="flex items-center">
+          <a href="http://localhost:3000/" class="flex items-center">
             <img
               src="https://flowbite.com/docs/images/logo.svg"
               class="h-6 mr-3 sm:h-9"
               alt="Flowbite Logo"
             />
-            <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white">
-              Flowbite
+            <span class="self-center  font-extrabold text-transparent text-3xl bg-clip-text bg-gradient-to-r from-purple-400 via-purple-500 to-purple-600 whitespace-nowrap dark:text-white">
+              Smart-Phone
             </span>
           </a>
           <div class="flex md:order-2">

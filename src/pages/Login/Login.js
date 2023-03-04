@@ -6,7 +6,9 @@ import { AuthContext } from "../../Contexts/AuthProvider/AuthProvider";
 import loginUser from "../../images/login-user.svg";
 import "./Login.css";
 export default function Login() {
-  const { loginWithGoogle, githubLogin } = useContext(AuthContext);
+  const { loginWithGoogle, githubLogin, loginUserWithEmail } =
+    useContext(AuthContext);
+
   const {
     register,
     handleSubmit,
@@ -14,7 +16,8 @@ export default function Login() {
   } = useForm();
 
   const handleFormSubmit = (data) => {
-    console.log(data);
+    const { email, password } = data;
+    loginUserWithEmail(email, password).then((res) => console.log(res));
   };
 
   // eye toggle for password
@@ -35,6 +38,7 @@ export default function Login() {
   const handleGithubLogin = () => {
     githubLogin().then((res) => console.log(res));
   };
+
   return (
     <div className="flex">
       <section className="bg-gray-50 dark:bg-gray-900 lg:w-1/2">
@@ -84,23 +88,25 @@ export default function Login() {
                   >
                     Password
                   </label>
-                  <input
-                    type={passwordShown ? "text" : "password"}
-                    name="password"
-                    id="password"
-                    placeholder="••••••••"
-                    className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                    required=""
-                    {...register("password", {
-                      pattern: /^[a-zA-Z0-9!@#$%^&*]{6,16}$/,
-                    })}
-                  />
-                  <i
-                    className=" cursor-pointer"
-                    onClick={togglePasswordVisiblity}
-                  >
-                    {eye}
-                  </i>{" "}
+                  <div className="flex relative">
+                    <input
+                      type={passwordShown ? "text" : "password"}
+                      name="password"
+                      id="password"
+                      placeholder="••••••••"
+                      className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                      required=""
+                      {...register("password", {
+                        pattern: /^[a-zA-Z0-9!@#$%^&*]{6,16}$/,
+                      })}
+                    />
+                    <i
+                      className=" cursor-pointer absolute right-2 top-3 "
+                      onClick={togglePasswordVisiblity}
+                    >
+                      {eye}
+                    </i>{" "}
+                  </div>
                   {errors.password?.type === "pattern" && (
                     <p className=" text-red-700" role="alert">
                       password minimum 6 character && maximum 16 character
@@ -166,7 +172,7 @@ export default function Login() {
                 <p className="text-sm font-light text-gray-500 dark:text-gray-400">
                   Don’t have an account yet?{" "}
                   <a
-                    href="#?"
+                    href="/signup"
                     className="font-medium text-primary-600 hover:underline dark:text-primary-500"
                   >
                     Sign up

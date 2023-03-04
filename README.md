@@ -3,6 +3,8 @@
 ## My Website Frontend uses Technology
 
 - HTML
+- CSS
+- Javascript
 - TailwindCSS
 - React.js
 - Firebase

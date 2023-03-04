@@ -1,8 +1,10 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
+import { AiFillEye, AiOutlineEyeInvisible } from "react-icons/ai";
 import { BsGithub, BsGoogle } from "react-icons/bs";
 import { AuthContext } from "../../Contexts/AuthProvider/AuthProvider";
 import loginUser from "../../images/login-user.svg";
+import "./Login.css";
 export default function Login() {
   const { loginWithGoogle, githubLogin } = useContext(AuthContext);
   const {
@@ -10,15 +12,26 @@ export default function Login() {
     handleSubmit,
     formState: { errors },
   } = useForm();
+
   const handleFormSubmit = (data) => {
     console.log(data);
   };
 
+  // eye toggle for password
+  const [passwordShown, setPasswordShown] = useState(false);
+  const togglePasswordVisiblity = () => {
+    setPasswordShown(!passwordShown);
+  };
+  const eye = passwordShown ? <AiFillEye /> : <AiOutlineEyeInvisible />;
+
+  // google login
   const handleGoogleLogin = () => {
     loginWithGoogle()
       .then((res) => console.log(res))
       .catch((error) => console.error(error));
   };
+
+  // github login
   const handleGithubLogin = () => {
     githubLogin().then((res) => console.log(res));
   };
@@ -72,7 +85,7 @@ export default function Login() {
                     Password
                   </label>
                   <input
-                    type="password"
+                    type={passwordShown ? "text" : "password"}
                     name="password"
                     id="password"
                     placeholder="••••••••"
@@ -82,6 +95,12 @@ export default function Login() {
                       pattern: /^[a-zA-Z0-9!@#$%^&*]{6,16}$/,
                     })}
                   />
+                  <i
+                    className=" cursor-pointer"
+                    onClick={togglePasswordVisiblity}
+                  >
+                    {eye}
+                  </i>{" "}
                   {errors.password?.type === "pattern" && (
                     <p className=" text-red-700" role="alert">
                       password minimum 6 character && maximum 16 character

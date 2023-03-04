@@ -1,5 +1,5 @@
 import React from "react";
-import { BsGoogle } from "react-icons/bs";
+import { BsGithub, BsGoogle } from "react-icons/bs";
 import loginUser from "../../images/login-user.svg";
 export default function Login() {
   return (
@@ -63,6 +63,10 @@ export default function Login() {
                 <div className=" bg-gray-50 text-xl border flex justify-center items-center w-full space-x-2 cursor-pointer hover:bg-gray-100 py-2.5">
                   <BsGoogle />
                   <span>Google Login</span>
+                </div>
+                <div className=" bg-gray-50 text-xl border flex justify-center items-center w-full space-x-2 cursor-pointer hover:bg-gray-100 py-2.5">
+                  <BsGithub />
+                  <span>Github Login</span>
                 </div>
                 <div class="flex items-center justify-between">
                   <div class="flex items-start">

@@ -1,7 +1,19 @@
-import React from "react";
+import React, { useContext } from "react";
 import { BsGithub, BsGoogle } from "react-icons/bs";
+import { AuthContext } from "../../Contexts/AuthProvider/AuthProvider";
 import loginUser from "../../images/login-user.svg";
 export default function Login() {
+  const { loginWithGoogle, githubLogin } = useContext(AuthContext);
+
+  const handleGoogleLogin = () => {
+    loginWithGoogle()
+      .then((res) => console.log(res))
+      .catch((error) => console.error(error));
+  };
+
+  const handleGithubLogin = () => {
+    githubLogin().then((res) => console.log(res));
+  };
   return (
     <div className="flex">
       <section class="bg-gray-50 dark:bg-gray-900 lg:w-1/2">
@@ -60,11 +72,17 @@ export default function Login() {
                   <span className="flex justify-center items-center">or</span>
                   <hr />
                 </div>
-                <div className=" bg-gray-50 text-xl border flex justify-center items-center w-full space-x-2 cursor-pointer hover:bg-gray-100 py-2.5">
+                <div
+                  onClick={handleGoogleLogin}
+                  className=" bg-gray-50 text-xl border flex justify-center items-center w-full space-x-2 cursor-pointer hover:bg-gray-100 py-2.5"
+                >
                   <BsGoogle />
                   <span>Google Login</span>
                 </div>
-                <div className=" bg-gray-50 text-xl border flex justify-center items-center w-full space-x-2 cursor-pointer hover:bg-gray-100 py-2.5">
+                <div
+                  onClick={handleGithubLogin}
+                  className=" bg-gray-50 text-xl border flex justify-center items-center w-full space-x-2 cursor-pointer hover:bg-gray-100 py-2.5"
+                >
                   <BsGithub />
                   <span>Github Login</span>
                 </div>

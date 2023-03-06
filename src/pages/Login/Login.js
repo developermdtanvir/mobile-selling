@@ -2,10 +2,19 @@ import React, { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
 import { AiFillEye, AiOutlineEyeInvisible } from "react-icons/ai";
 import { BsGithub, BsGoogle } from "react-icons/bs";
+import { useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Contexts/AuthProvider/AuthProvider";
 import loginUser from "../../images/login-user.svg";
 import "./Login.css";
 export default function Login() {
+  // dependencies
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  console.log(location.state?.from?.pathname);
+
+  let form = location.state?.from?.pathname || "/";
+
   const { loginWithGoogle, githubLogin, loginUserWithEmail } =
     useContext(AuthContext);
 
@@ -17,7 +26,10 @@ export default function Login() {
 
   const handleFormSubmit = (data) => {
     const { email, password } = data;
-    loginUserWithEmail(email, password).then((res) => console.log(res));
+    loginUserWithEmail(email, password).then((res) => {
+      console.log(res);
+      navigate(form, { replace: true });
+    });
   };
 
   // eye toggle for password
@@ -30,7 +42,9 @@ export default function Login() {
   // google login
   const handleGoogleLogin = () => {
     loginWithGoogle()
-      .then((res) => console.log(res))
+      .then((res) => {
+        navigate(form, { relative: true });
+      })
       .catch((error) => console.error(error));
   };
 

@@ -10,11 +10,11 @@ export default function Carousal() {
           {images.map((items) => (
             <div
               key={items.id}
-              className=" flex bg-gradient-to-l from-purple-200 via-purple-300 to-purple-400"
+              className=" flex bg-gradient-to-r from-teal-500 via-purple-500 to-orange-500"
             >
               <img className=" w-1/2 h-80 p-10" alt="" src={items.img} />
               <div className="w-1/2 text-center relative">
-                <h1 className=" text-3xl lg:text-5xl md:text-4xl bg-gradient-to-r from-blue-600 via-green-500 to-indigo-400 inline-block text-transparent bg-clip-text absolute left-20 top-20 font-bold">
+                <h1 className=" text-3xl lg:text-5xl md:text-4xl bg-gradient-to-r from-blue-600 via-green-500 to-indigo-400  inline-block text-transparent bg-clip-text absolute left-20 top-20 font-bold">
                   {items.title}
                 </h1>
                 <p className=" text-xl lg:text-3xl absolute top-40 font-semibold">
